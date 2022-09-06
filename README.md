@@ -1,3 +1,5 @@
+# This is our group project for Computer Graphics Lab (CSE 4204)
+# Installing Informations is following :-
 # Three-Js-Project-Couch-Lamp
 # First off all Download the Project repository 
 # Make sure to install dependencies: 
