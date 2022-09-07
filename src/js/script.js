@@ -18,6 +18,11 @@ import white from '../img/whitecouch.jpg';
 
 var click = 1;
 
+
+
+var stream = "https://cdn.rawgit.com/ellenprobst/web-audio-api-with-Threejs/57582104/lib/TheWarOnDrugs.m4a";
+//var stream = "G:/Three Js Project/src/music/sad.mp3";
+
 // This constructor set the camera height and movement speed //
 var socket = {
     height: 8.5,
@@ -56,6 +61,26 @@ camera.position.set(0, socket.height, 33);
 const textureLoader = new THREE.TextureLoader();
 //scene.background = textureLoader.load('https://thumbs.dreamstime.com/z/brick-wall-lights-old-stage-31525641.jpg');
 
+
+// create an AudioListener and add it to the camera
+const listener = new THREE.AudioListener();
+scene.add( listener );
+
+// create a global audio source
+const sound = new THREE.Audio( listener );
+
+// load a sound and set it as the Audio object's buffer
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load( stream, function( buffer ) {
+	sound.setBuffer( buffer );
+	sound.setLoop( true );
+	sound.setVolume( 0.5 );
+    
+	sound.play();
+}
+  
+
+);
 
 
 /**
@@ -179,7 +204,7 @@ const head = new THREE.Mesh(
     new THREE.CylinderGeometry(8.44, 5, 9.06),
     new THREE.MeshPhongMaterial({
 
-        transparent: true,
+        //transparent: true,
 
         map: new THREE.TextureLoader().load(
             'https://thumbs.dreamstime.com/z/water-background-white-texture-blue-mint-surface-rings-ripple-spa-concept-flat-lay-top-view-transparent-copy-space-place-214482111.jpg'),
@@ -272,7 +297,7 @@ renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.setClearColor('#ffffff');
+renderer.setClearColor('black');
 document.body.appendChild(renderer.domElement);
 
 // Camera add to screen //
@@ -280,7 +305,7 @@ scene.add(camera);
 
 // Create a room Geometry //
 
-const geometry = new THREE.BoxGeometry(70, 60, 70);
+const geometry = new THREE.BoxGeometry(170, 40, 70);
 
 const material = new THREE.MeshStandardMaterial({
     map: new THREE.TextureLoader().load('https://thumbs.dreamstime.com/z/brick-wall-lights-old-stage-31525641.jpg'),
@@ -288,7 +313,7 @@ const material = new THREE.MeshStandardMaterial({
 
 material.side = THREE.BackSide;
 const room = new THREE.Mesh(geometry, material);
-room.position.y = 0;
+room.position.y = 19;
 room.receiveShadow = true;
 scene.add(room);
 
@@ -300,6 +325,9 @@ orbit.enableDamping = true;
 orbit.update();
 
 
+
+
+
 // texture changing using MOUSE click //
 
 function useClick(event) {
@@ -309,6 +337,7 @@ function useClick(event) {
     } else {
         click = 1;
     }
+
     //texture loader
     
     const textureLoader1 = new THREE.TextureLoader();
