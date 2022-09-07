@@ -1,5 +1,5 @@
 // Create a namespace //
-//import * as THREE from 'three';
+import * as THREE from 'three';
 
 
 

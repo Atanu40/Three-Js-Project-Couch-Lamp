@@ -534,7 +534,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"4pp4s":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // Create a namespace //
-//import * as THREE from 'three';
+var _three = require("three");
 //import orbitcontrol for mouse click work //
 var _orbitControlsJs = require("three/examples/jsm/controls/OrbitControls.js");
 // import the image file & load it dist folder //
@@ -561,24 +561,24 @@ const sizes = {
     height: window.innerHeight
 };
 // Scene
-const scene = new THREE.Scene();
+const scene = new _three.Scene();
 /**
   Camera
 */ // Basic camera
-const camera = new THREE.PerspectiveCamera(85, sizes.width / sizes.height, 0.1, 1000 // far
+const camera = new _three.PerspectiveCamera(85, sizes.width / sizes.height, 0.1, 1000 // far
 );
 // Camera possition set//
 camera.position.set(0, socket.height, 33);
 // Texture looder //
-const textureLoader = new THREE.TextureLoader();
+const textureLoader = new _three.TextureLoader();
 //scene.background = textureLoader.load('https://thumbs.dreamstime.com/z/brick-wall-lights-old-stage-31525641.jpg');
 // create an AudioListener and add it to the camera
-const listener = new THREE.AudioListener();
+const listener = new _three.AudioListener();
 scene.add(listener);
 // create a global audio source
-const sound = new THREE.Audio(listener);
+const sound = new _three.Audio(listener);
 // load a sound and set it as the Audio object's buffer
-const audioLoader = new THREE.AudioLoader();
+const audioLoader = new _three.AudioLoader();
 audioLoader.load(stream, function(buffer) {
     sound.setBuffer(buffer);
     sound.setLoop(true);
@@ -588,11 +588,11 @@ audioLoader.load(stream, function(buffer) {
 /**
   Couch
  */ // Couch container
-const couch = new THREE.Group();
+const couch = new _three.Group();
 scene.add(couch);
 //Body//
 //Body1//
-var body1 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+var body1 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
     map: textureLoader.load((0, _bluecouchJpgDefault.default))
 }));
 body1.position.x = -12;
@@ -601,7 +601,7 @@ body1.position.z = -18.18;
 body1.rotation.y = Math.PI / 2;
 couch.add(body1);
 //Body2//
-var body2 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+var body2 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
     map: textureLoader.load((0, _bluecouchJpgDefault.default))
 }));
 body2.position.x = 3;
@@ -610,7 +610,7 @@ body2.position.z = -18.18;
 body2.rotation.y = Math.PI / 2;
 couch.add(body2);
 // body3
-var body3 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+var body3 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
     map: textureLoader.load((0, _bluecouchJpgDefault.default))
 }));
 body3.position.x = -12;
@@ -619,7 +619,7 @@ body3.position.z = -12.5;
 body3.rotation.y = Math.PI / 2;
 couch.add(body3);
 // body4
-var body4 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+var body4 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
     map: textureLoader.load((0, _bluecouchJpgDefault.default))
 }));
 body4.position.x = 3;
@@ -628,7 +628,7 @@ body4.position.z = -12.5;
 body4.rotation.y = Math.PI / 2;
 couch.add(body4);
 // body 5
-var body5 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+var body5 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
     map: textureLoader.load((0, _bluecouchJpgDefault.default))
 }));
 body5.position.x = 11;
@@ -636,7 +636,7 @@ body5.position.y = 3.8;
 body5.position.z = -12.5;
 couch.add(body5);
 // body 6
-var body6 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+var body6 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
     map: textureLoader.load((0, _bluecouchJpgDefault.default))
 }));
 body6.position.x = -20;
@@ -646,12 +646,12 @@ couch.add(body6);
 /**
   Lamp
  */ // Lamp container
-const lamp = new THREE.Group();
+const lamp = new _three.Group();
 scene.add(lamp);
 // Head //
-const head = new THREE.Mesh(new THREE.CylinderGeometry(8.44, 5, 9.06), new THREE.MeshPhongMaterial({
+const head = new _three.Mesh(new _three.CylinderGeometry(8.44, 5, 9.06), new _three.MeshPhongMaterial({
     //transparent: true,
-    map: new THREE.TextureLoader().load("https://thumbs.dreamstime.com/z/water-background-white-texture-blue-mint-surface-rings-ripple-spa-concept-flat-lay-top-view-transparent-copy-space-place-214482111.jpg")
+    map: new _three.TextureLoader().load("https://thumbs.dreamstime.com/z/water-background-white-texture-blue-mint-surface-rings-ripple-spa-concept-flat-lay-top-view-transparent-copy-space-place-214482111.jpg")
 }));
 head.position.x = 22;
 head.position.y = 17.8;
@@ -659,8 +659,8 @@ head.position.z = -12.5;
 head.rotation.x = Math.PI;
 lamp.add(head);
 // Stand //
-const stand = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 15.25), new THREE.MeshBasicMaterial({
-    map: new THREE.TextureLoader().load("https://i0.wp.com/kofteros.com/wp-content/uploads/2020/04/F1-Dark-Oak-FL-F1.png?fit=708%2C500&ssl=1")
+const stand = new _three.Mesh(new _three.BoxGeometry(1, 1, 15.25), new _three.MeshBasicMaterial({
+    map: new _three.TextureLoader().load("https://i0.wp.com/kofteros.com/wp-content/uploads/2020/04/F1-Dark-Oak-FL-F1.png?fit=708%2C500&ssl=1")
 }));
 stand.position.x = 22;
 stand.position.y = 8.8;
@@ -668,8 +668,8 @@ stand.position.z = -12.5;
 stand.rotation.x = Math.PI / 2;
 lamp.add(stand);
 // Basement //
-const base = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({
-    map: new THREE.TextureLoader().load("https://thumbs.dreamstime.com/z/seamless-marble-tiles-texture-full-size-light-stone-floor-facade-good-architectural-visualization-projects-56673285.jpg")
+const base = new _three.Mesh(new _three.PlaneGeometry(10, 10), new _three.MeshBasicMaterial({
+    map: new _three.TextureLoader().load("https://thumbs.dreamstime.com/z/seamless-marble-tiles-texture-full-size-light-stone-floor-facade-good-architectural-visualization-projects-56673285.jpg")
 }));
 base.position.x = 22;
 base.position.y = 0.8;
@@ -677,10 +677,10 @@ base.position.z = -12.5;
 base.rotation.x -= Math.PI / 2;
 lamp.add(base);
 // Floor //
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(250, 200), new THREE.MeshStandardMaterial({
-    map: new THREE.TextureLoader().load("https://thumbs.dreamstime.com/z/seamless-marble-tiles-texture-full-size-light-stone-floor-facade-good-architectural-visualization-projects-56673285.jpg"),
+const floor = new _three.Mesh(new _three.PlaneGeometry(250, 200), new _three.MeshStandardMaterial({
+    map: new _three.TextureLoader().load("https://thumbs.dreamstime.com/z/seamless-marble-tiles-texture-full-size-light-stone-floor-facade-good-architectural-visualization-projects-56673285.jpg"),
     wireframe: false,
-    side: THREE.DoubleSide
+    side: _three.DoubleSide
 }));
 floor.receiveShadow = true;
 floor.rotation.x = -0.5 * Math.PI;
@@ -689,10 +689,10 @@ scene.add(floor);
 /**
  Lights
 */ // Ambient light //
-const ambientLight = new THREE.AmbientLight(0xb9d5ff, 0.4);
+const ambientLight = new _three.AmbientLight(0xb9d5ff, 0.4);
 scene.add(ambientLight);
 // Point light //
-const lampLight = new THREE.PointLight(0xffe8d0);
+const lampLight = new _three.PointLight(0xffe8d0);
 lampLight.castShadow = true;
 lampLight.shadow.mapSize.width = 512;
 lampLight.shadow.mapSize.height = 512;
@@ -700,22 +700,22 @@ lampLight.shadow.camera.far = 7.5;
 lampLight.position.set(15.5, 3, 2.7);
 lamp.add(lampLight);
 //renderer //
-renderer = new THREE.WebGLRenderer();
+renderer = new _three.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.type = _three.PCFSoftShadowMap;
 renderer.setClearColor("black");
 document.body.appendChild(renderer.domElement);
 // Camera add to screen //
 scene.add(camera);
 // Create a room Geometry //
-const geometry = new THREE.BoxGeometry(170, 40, 70);
-const material = new THREE.MeshStandardMaterial({
-    map: new THREE.TextureLoader().load("https://thumbs.dreamstime.com/z/brick-wall-lights-old-stage-31525641.jpg")
+const geometry = new _three.BoxGeometry(170, 40, 70);
+const material = new _three.MeshStandardMaterial({
+    map: new _three.TextureLoader().load("https://thumbs.dreamstime.com/z/brick-wall-lights-old-stage-31525641.jpg")
 });
-material.side = THREE.BackSide;
-const room = new THREE.Mesh(geometry, material);
+material.side = _three.BackSide;
+const room = new _three.Mesh(geometry, material);
 room.position.y = 19;
 room.receiveShadow = true;
 scene.add(room);
@@ -728,85 +728,85 @@ function useClick(event) {
     if (click <= 4) click += 1;
     else click = 1;
     //texture loader
-    const textureLoader1 = new THREE.TextureLoader();
+    const textureLoader1 = new _three.TextureLoader();
     switch(click){
         case 1:
-            var body1 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body1 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _bluecouchJpgDefault.default))
             }));
-            var body2 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body2 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _bluecouchJpgDefault.default))
             }));
-            var body3 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body3 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _bluecouchJpgDefault.default))
             }));
-            var body4 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body4 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _bluecouchJpgDefault.default))
             }));
-            var body5 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body5 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _bluecouchJpgDefault.default))
             }));
-            var body6 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body6 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _bluecouchJpgDefault.default))
             }));
             break;
         case 2:
-            var body1 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body1 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _redcouchJpgDefault.default))
             }));
-            var body2 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body2 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _redcouchJpgDefault.default))
             }));
-            var body3 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body3 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _redcouchJpgDefault.default))
             }));
-            var body4 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body4 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _redcouchJpgDefault.default))
             }));
-            var body5 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body5 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _redcouchJpgDefault.default))
             }));
-            var body6 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body6 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _redcouchJpgDefault.default))
             }));
             break;
         case 3:
-            var body1 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body1 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _brownJpgDefault.default))
             }));
-            var body2 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body2 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _brownJpgDefault.default))
             }));
-            var body3 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body3 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _brownJpgDefault.default))
             }));
-            var body4 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body4 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _brownJpgDefault.default))
             }));
-            var body5 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body5 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _brownJpgDefault.default))
             }));
-            var body6 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body6 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _brownJpgDefault.default))
             }));
             break;
         case 4:
-            var body1 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body1 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _whitecouchJpgDefault.default))
             }));
-            var body2 = new THREE.Mesh(new THREE.BoxGeometry(1, 10.38, 15), new THREE.MeshBasicMaterial({
+            var body2 = new _three.Mesh(new _three.BoxGeometry(1, 10.38, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _whitecouchJpgDefault.default))
             }));
-            var body3 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body3 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _whitecouchJpgDefault.default))
             }));
-            var body4 = new THREE.Mesh(new THREE.BoxGeometry(12.18, 4.32, 15), new THREE.MeshBasicMaterial({
+            var body4 = new _three.Mesh(new _three.BoxGeometry(12.18, 4.32, 15), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _whitecouchJpgDefault.default))
             }));
-            var body5 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body5 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _whitecouchJpgDefault.default))
             }));
-            var body6 = new THREE.Mesh(new THREE.BoxGeometry(1, 7.38, 12.1), new THREE.MeshBasicMaterial({
+            var body6 = new _three.Mesh(new _three.BoxGeometry(1, 7.38, 12.1), new _three.MeshBasicMaterial({
                 map: textureLoader1.load((0, _whitecouchJpgDefault.default))
             }));
             break;
@@ -842,7 +842,7 @@ function useClick(event) {
 }
 window.addEventListener("click", useClick);
 //Tracking the pc current time// 
-const clock = new THREE.Clock();
+const clock = new _three.Clock();
 //creat a arrow function//
 const tick1 = ()=>{
     // Here getElapsedTime() is Keeps track of the total time that the clock has been running.// 
@@ -895,7 +895,7 @@ window.addEventListener("resize", ()=>{
     renderer.render(scene, camera);
 });
 
-},{"three/examples/jsm/controls/OrbitControls.js":"7mqRv","../img/bluecouch.jpg":"ayZjs","../img/redcouch.jpg":"hFAMd","../img/brown.jpg":"jh4Z2","../img/whitecouch.jpg":"1JYQI","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"7mqRv":[function(require,module,exports) {
+},{"three/examples/jsm/controls/OrbitControls.js":"7mqRv","../img/bluecouch.jpg":"ayZjs","../img/redcouch.jpg":"hFAMd","../img/brown.jpg":"jh4Z2","../img/whitecouch.jpg":"1JYQI","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","three":"ktPTu"}],"7mqRv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OrbitControls", ()=>OrbitControls);
