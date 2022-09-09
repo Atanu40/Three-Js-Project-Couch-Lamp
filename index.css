@@ -10,10 +10,10 @@ body
     overflow: hidden;
 }
 
-#text {
+#parent {
     text-align: center;
     
-    color: red;
+    color: rgb(142, 88, 192);
 }
 
 .webgl
