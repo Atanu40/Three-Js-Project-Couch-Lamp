@@ -895,83 +895,7 @@ window.addEventListener("resize", ()=>{
     renderer.render(scene, camera);
 });
 
-},{"../img/bluecouch.jpg":"ayZjs","../img/redcouch.jpg":"hFAMd","../img/brown.jpg":"jh4Z2","../img/whitecouch.jpg":"1JYQI","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv"}],"ayZjs":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "bluecouch.309c251a.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"2N1pr"}],"2N1pr":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"hFAMd":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "redcouch.9fecac8e.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"2N1pr"}],"jh4Z2":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "brown.eb492e5a.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"2N1pr"}],"1JYQI":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "whitecouch.fc7d9299.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"2N1pr"}],"dOaw1":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"ktPTu":[function(require,module,exports) {
+},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","../img/bluecouch.jpg":"ayZjs","../img/redcouch.jpg":"hFAMd","../img/brown.jpg":"jh4Z2","../img/whitecouch.jpg":"1JYQI","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"ktPTu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ACESFilmicToneMapping", ()=>ACESFilmicToneMapping);
@@ -29965,7 +29889,37 @@ if (typeof window !== "undefined") {
     else window.__THREE__ = REVISION;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"7mqRv":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"dOaw1":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"7mqRv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OrbitControls", ()=>OrbitControls);
@@ -30649,6 +30603,52 @@ class MapControls extends OrbitControls {
     }
 }
 
-},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}]},["2uOsx","4pp4s"], "4pp4s", "parcelRequirea47f")
+},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"ayZjs":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "bluecouch.309c251a.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"2N1pr"}],"2N1pr":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"hFAMd":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "redcouch.9fecac8e.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"2N1pr"}],"jh4Z2":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "brown.eb492e5a.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"2N1pr"}],"1JYQI":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "whitecouch.fc7d9299.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"2N1pr"}]},["2uOsx","4pp4s"], "4pp4s", "parcelRequirea47f")
 
 //# sourceMappingURL=index.4de9b498.js.map
