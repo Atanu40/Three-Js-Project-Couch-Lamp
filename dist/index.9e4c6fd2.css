@@ -7,9 +7,9 @@ html, body {
   overflow: hidden;
 }
 
-#text {
+#parent {
   text-align: center;
-  color: red;
+  color: #8e58c0;
 }
 
 .webgl {
