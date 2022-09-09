@@ -4,7 +4,7 @@ import * as THREE from 'three';
 
 
 //import orbitcontrol for mouse click work //
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from '../OrbitControls';
 
 
 // import the image file & load it dist folder //
