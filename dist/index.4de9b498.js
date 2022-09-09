@@ -536,7 +536,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // Create a namespace //
 var _three = require("three");
 //import orbitcontrol for mouse click work //
-var _orbitControls = require("../OrbitControls");
+var _orbitControlsJs = require("three/examples/jsm/controls/OrbitControls.js");
 // import the image file & load it dist folder //
 var _bluecouchJpg = require("../img/bluecouch.jpg");
 var _bluecouchJpgDefault = parcelHelpers.interopDefault(_bluecouchJpg);
@@ -720,7 +720,7 @@ room.position.y = 19;
 room.receiveShadow = true;
 scene.add(room);
 // Move the camera around object using MOUSE movment //
-const orbit = new (0, _orbitControls.OrbitControls)(camera, renderer.domElement);
+const orbit = new (0, _orbitControlsJs.OrbitControls)(camera, renderer.domElement);
 orbit.enableDamping = true;
 orbit.update();
 // texture changing using MOUSE click //
@@ -895,7 +895,7 @@ window.addEventListener("resize", ()=>{
     renderer.render(scene, camera);
 });
 
-},{"../img/bluecouch.jpg":"ayZjs","../img/redcouch.jpg":"hFAMd","../img/brown.jpg":"jh4Z2","../img/whitecouch.jpg":"1JYQI","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","three":"ktPTu","../OrbitControls":"9Cjeo"}],"ayZjs":[function(require,module,exports) {
+},{"../img/bluecouch.jpg":"ayZjs","../img/redcouch.jpg":"hFAMd","../img/brown.jpg":"jh4Z2","../img/whitecouch.jpg":"1JYQI","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv"}],"ayZjs":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("3ninf") + "bluecouch.309c251a.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"2N1pr"}],"2N1pr":[function(require,module,exports) {
@@ -29965,7 +29965,7 @@ if (typeof window !== "undefined") {
     else window.__THREE__ = REVISION;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"9Cjeo":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1"}],"7mqRv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OrbitControls", ()=>OrbitControls);
